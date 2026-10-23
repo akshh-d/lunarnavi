@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CompareRouteImport } from './routes/compare'
+import { Route as ExplorerRouteImport } from './routes/explorer'
+import { Route as GeometryRouteImport } from './routes/geometry'
+import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as MissionsRouteImport } from './routes/missions'
+import { Route as ScenariosRouteImport } from './routes/scenarios'
+import { Route as TimelineRouteImport } from './routes/timeline'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplorerRoute = ExplorerRouteImport.update({
+  id: '/explorer',
+  path: '/explorer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeometryRoute = GeometryRouteImport.update({
+  id: '/geometry',
+  path: '/geometry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissionsRoute = MissionsRouteImport.update({
+  id: '/missions',
+  path: '/missions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenariosRoute = ScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimelineRoute = TimelineRouteImport.update({
+  id: '/timeline',
+  path: '/timeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/compare': typeof CompareRoute
+  '/explorer': typeof ExplorerRoute
+  '/geometry': typeof GeometryRoute
+  '/methodology': typeof MethodologyRoute
+  '/missions': typeof MissionsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/timeline': typeof TimelineRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/compare': typeof CompareRoute
+  '/explorer': typeof ExplorerRoute
+  '/geometry': typeof GeometryRoute
+  '/methodology': typeof MethodologyRoute
+  '/missions': typeof MissionsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/timeline': typeof TimelineRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/compare': typeof CompareRoute
+  '/explorer': typeof ExplorerRoute
+  '/geometry': typeof GeometryRoute
+  '/methodology': typeof MethodologyRoute
+  '/missions': typeof MissionsRoute
+  '/scenarios': typeof ScenariosRoute
+  '/timeline': typeof TimelineRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/compare'
+    | '/explorer'
+    | '/geometry'
+    | '/methodology'
+    | '/missions'
+    | '/scenarios'
+    | '/timeline'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/compare'
+    | '/explorer'
+    | '/geometry'
+    | '/methodology'
+    | '/missions'
+    | '/scenarios'
+    | '/timeline'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/compare'
+    | '/explorer'
+    | '/geometry'
+    | '/methodology'
+    | '/missions'
+    | '/scenarios'
+    | '/timeline'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CompareRoute: typeof CompareRoute
+  ExplorerRoute: typeof ExplorerRoute
+  GeometryRoute: typeof GeometryRoute
+  MethodologyRoute: typeof MethodologyRoute
+  MissionsRoute: typeof MissionsRoute
+  ScenariosRoute: typeof ScenariosRoute
+  TimelineRoute: typeof TimelineRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explorer': {
+      id: '/explorer'
+      path: '/explorer'
+      fullPath: '/explorer'
+      preLoaderRoute: typeof ExplorerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/geometry': {
+      id: '/geometry'
+      path: '/geometry'
+      fullPath: '/geometry'
+      preLoaderRoute: typeof GeometryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/missions': {
+      id: '/missions'
+      path: '/missions'
+      fullPath: '/missions'
+      preLoaderRoute: typeof MissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenarios': {
+      id: '/scenarios'
+      path: '/scenarios'
+      fullPath: '/scenarios'
+      preLoaderRoute: typeof ScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timeline': {
+      id: '/timeline'
+      path: '/timeline'
+      fullPath: '/timeline'
+      preLoaderRoute: typeof TimelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CompareRoute: CompareRoute,
+  ExplorerRoute: ExplorerRoute,
+  GeometryRoute: GeometryRoute,
+  MethodologyRoute: MethodologyRoute,
+  MissionsRoute: MissionsRoute,
+  ScenariosRoute: ScenariosRoute,
+  TimelineRoute: TimelineRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
