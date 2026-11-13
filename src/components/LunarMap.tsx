@@ -36,7 +36,7 @@ export function LunarMap({ sites, selectedId, onSelect, onPickLocation, picked, 
             <TransformComponent wrapperStyle={{ width: "100%", height: "100%" }} contentStyle={{ width: "100%" }}>
               <div className="relative w-full" style={{ aspectRatio: "2 / 1" }}>
                 {imgOk ? (
-                  <img src={MOON_TEXTURE} alt="LROC WAC global mosaic of the Moon (equirectangular)" crossOrigin="anonymous"
+                  <img src={MOON_TEXTURE} alt="LROC WAC global mosaic of the Moon (equirectangular)"
                     className="absolute inset-0 h-full w-full select-none object-cover" draggable={false} onError={() => setImgOk(false)} />
                 ) : <div className="absolute inset-0 bg-regolith/40" />}
                 <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full"
